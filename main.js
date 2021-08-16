@@ -8,13 +8,23 @@ function fahrenheitToCelsius(fahrenheit) {
 }
 document.getElementById('celsius').addEventListener('keyup', function () {
     const celsius = document.getElementById('celsius');
-    const celsiusValue = parseFloat(celsius.value);
-    const fahrenheit = celsiusToFahrenheit(celsiusValue);
-    document.getElementById('fahrenheit').value = fahrenheit;
+    if (celsius.value == '') {
+        document.getElementById('fahrenheit').value = "";
+    } else {
+        const celsius = document.getElementById('celsius');
+        const celsiusValue = parseFloat(celsius.value);
+        const fahrenheit = celsiusToFahrenheit(celsiusValue);
+        document.getElementById('fahrenheit').value = fahrenheit;
+    }
 });
 document.getElementById('fahrenheit').addEventListener('keyup', function () {
     const fahrenheit = document.getElementById('fahrenheit');
-    const fahrenheitValue = parseFloat(fahrenheit.value);
-    const celsius = fahrenheitToCelsius(fahrenheitValue);
-    document.getElementById('celsius').value = celsius;
+    if (fahrenheit.value == '') {
+        document.getElementById('celsius').value = '';
+    } else {
+        const fahrenheit = document.getElementById('fahrenheit');
+        const fahrenheitValue = parseFloat(fahrenheit.value);
+        const celsius = fahrenheitToCelsius(fahrenheitValue);
+        document.getElementById('celsius').value = celsius;
+    }
 })
