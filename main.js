@@ -9,7 +9,7 @@ function fahrenheitToCelsius(fahrenheit) {
 document.getElementById('celsius').addEventListener('keyup', function () {
     const celsius = document.getElementById('celsius');
     if (celsius.value == '') {
-        document.getElementById('fahrenheit').value = "";
+        document.getElementById('fahrenheit').value = '';
     } else {
         const celsius = document.getElementById('celsius');
         const celsiusValue = parseFloat(celsius.value);
@@ -19,6 +19,9 @@ document.getElementById('celsius').addEventListener('keyup', function () {
 });
 document.getElementById('fahrenheit').addEventListener('keyup', function () {
     const fahrenheit = document.getElementById('fahrenheit');
+    if (fahrenheit.value == 'string') {
+        document.getElementById('celsius').value = '';
+    }
     if (fahrenheit.value == '') {
         document.getElementById('celsius').value = '';
     } else {
